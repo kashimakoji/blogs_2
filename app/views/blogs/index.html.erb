@@ -1,4 +1,4 @@
-<h1>ブログ一覧index.html.erbBlog.all）</h1>
+<h1>ブログ一覧index.html.erb(Blog.all）</h1>
 <table>
     <tr>
         <th>タイトル</th>
@@ -10,6 +10,7 @@
             <td><%= blog.content %></td>
             <td><%= link_to '詳細の確認', blog_path(blog.id) %></td>
             <td><%= link_to 'ブログを編集する', edit_blog_path(blog.id) %></td>
+            <td><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete %>
         </tr>
     <% end %>
 </table>
