@@ -1,0 +1,17 @@
+<h1>ブログ一覧index.html.erbBlog.all）</h1>
+<table>
+    <tr>
+        <th>タイトル</th>
+        <th>内容</th>
+    </tr>
+    <% @blogs.each do |blog| %>
+        <tr>
+            <td><%= blog.title %></td>
+            <td><%= blog.content %></td>
+            <td><%= link_to '詳細の確認', blog_path(blog.id) %></td>
+            <td><%= link_to 'ブログを編集する', edit_blog_path(blog.id) %></td>
+        </tr>
+    <% end %>
+</table>
+<br>
+<%= link_to 'ブログ作成画面へ戻る', new_blog_path %>
